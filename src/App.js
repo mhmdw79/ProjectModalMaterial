@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from 'react';
+ import TableList from './components/Table';
+ import Modal from './components/Modal';
 function App() {
+  
+  
+  
+
+  const [list,setList] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",marginTop:"10rem"}}>
+      <Modal list={list} setList={setList}/>
+    <div style={{marginTop:"2rem"}}>
+      <TableList list={list}/>
     </div>
+    </div>
+  
+    </>
   );
 }
 
